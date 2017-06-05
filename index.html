@@ -3,8 +3,185 @@
 <head>
 	<meta charset="UTF-8">
 	<title>珠海商城</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<style>
+		/*头部导航*/
+		.nav{
+			width: 100%;
+			height: 35px;
+			background-color: #E3E4E5;
+		}
+		.nav ul{
+			list-style: none;
+			padding-right: 60px;
+			padding-left: 60px;
+			color: #999999;
+		}
+		.nav li{
+			line-height: 35px;
+			margin-right: 15px;
+			float: right;
+		}
+		.nav a{
+			text-decoration: none;
+			color: #999999;
+			padding-left: 15px;
+			border-left: 1px solid #ccc;
+		}
+		.nav a:hover{
+			font-weight: bold;
+			color: #D9534F;
+		}
+		.nav li:first-child{		
+			float: left;
+		}
+		.nav-pull-down{
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		.nav-pull-down-action{
+			background-color: #fff;
+		}
+		/*字体颜色*/
+		.text-color-red{
+			color: #D9534F;
+		}
+		/*浮窗*/
+		/*地理位置*/
+		.city{
+			width: 238px;
+			padding:15px;
+			color: #999;
+			position: absolute;
+			background-color: #fff;
+			box-shadow: 0px 5px 15px #ccc;
+			display: none;
+		}
+		.city-item{
+			padding: 5px;
+		}
+		.city-item:hover{
+			font-weight: bold;
+			color: #D9534F;
+		}
+		/*我的商城*/
+		.my-shop-panel{
+			width: 238px;
+			padding:15px;
+			color: #999;
+			position: absolute;
+			background-color: #fff;
+			box-shadow: 0px 5px 15px #ccc;
+			display: none;
+		}
+		.my-item{
+			padding:15px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div class="nav">
+		<ul>
+			<li class="nav-pull-down location"><img src="img/icon_location.png"> 珠海</li>
+			<li><a href="#">手机商城</a></li>
+			<li><a href="#">网站导航</a></li>
+			<li><a href="#">客户服务</a> <span class="glyphicon glyphicon-menu-down"></span></li>
+			<li><a href="#">企业采购</a></li>
+			<li><a href="#">商城会员</a></li>
+			<li class="nav-pull-down my-shop"><a href="#">我的商城</a> <span class="glyphicon glyphicon-menu-down"></span></li>
+			<li>你好，请登录 <span class="text-color-red">免费注册</span></li>
+		</ul>
+	</div>
+	<div class="container">
+		
+	</div>
+	<!-- 页面上的各种浮窗 -->
+	<!-- 地理位置 -->
+	<div class="city">
+		<p>
+			<span class="city-item">北京 </span>
+			<span class="city-item">上海 </span>
+			<span class="city-item">天津 </span>
+			<span class="city-item">重庆 </span>
+			<span class="city-item">河北 </span>
+		</p>	
+		<p>
+			<span class="city-item">山西 </span>
+			<span class="city-item">河南 </span>
+			<span class="city-item">辽宁 </span>
+			<span class="city-item">吉林 </span>
+			<span class="city-item">江苏 </span>
+		</p>
+		<p>
+			<span class="city-item">福建 </span>
+			<span class="city-item">湖北 </span>
+			<span class="city-item">湖南 </span>
+			<span class="city-item">广东 </span>
+			<span class="city-item">广西 </span>
+		</p>
+		<p>
+			<span class="city-item">江西 </span>
+			<span class="city-item">四川 </span>
+			<span class="city-item">海南 </span>
+			<span class="city-item">贵州</span>
+			<span class="city-item">云南</span>
+		</p>
+		<p>
+			<span class="city-item">西藏</span>
+			<span class="city-item">陕西</span>
+			<span class="city-item">甘肃</span>
+			<span class="city-item">青海</span>
+			<span class="city-item">宁夏</span>
+		</p>
+	</div>
+	<!-- 我的商城 -->
+	<div class="my-shop-panel">
+		<p>
+			<span class="my-item">待处理订单</span>
+			<span class="my-item">返修退换货</span>
+		</p>
+		<p>
+			<span class="my-item">返修退换货</span>	
+			<span class="my-item">降价商品</span>
+		</p>	
+		<p>
+			<span class="my-item">我的新消息</span>
+			<span class="my-item">我的问答</span>
+		</p>
+	</div>
 </body>
+<script>
+	//当鼠标放在导航条上时
+	//在地址上
+	$('.location,.city').hover(
+		function() {
+			var locatOffset = $('.location').offset();
+			$('.city').show();
+			$('.city').css('left', locatOffset.left + "px");
+			$('.city').css('top', (locatOffset.top+35) + "px");
+			$('.location').addClass("nav-pull-down-action");
+		},
+		function(){
+			$('.city').hide();
+			$('.location').removeClass("nav-pull-down-action");
+		}
+	);
+	//在我的商城上
+	$('.my-shop,.my-shop-panel').hover(
+		function(){
+			var locatOffset = $('.my-shop').offset();
+			$('.my-shop-panel').show();
+			$('.my-shop-panel').css('left', locatOffset.left + "px");
+			$('.my-shop-panel').css('top', (locatOffset.top+35) + "px");
+			$('.my-shop').addClass("nav-pull-down-action");
+			$('.my-shop').children('a').css("border", "none");
+		},
+		function(){
+			$('.my-shop-panel').hide();
+			$('.my-shop').children('a').css("border-left", "1px solid #ccc");
+			$('.my-shop').removeClass("nav-pull-down-action");
+		});
+</script>
 </html>
