@@ -4,9 +4,13 @@
 	<meta charset="UTF-8">
 	<title>珠海商城</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<style>
+		body{
+			background: #F6F6F6;
+		}
 		/*头部导航*/
 		.nav{
 			width: 100%;
@@ -22,6 +26,7 @@
 		.nav li{
 			line-height: 35px;
 			margin-right: 15px;
+			font-weight: bold;
 			float: right;
 		}
 		.nav a{
@@ -31,7 +36,6 @@
 			border-left: 1px solid #ccc;
 		}
 		.nav a:hover{
-			font-weight: bold;
 			color: #D9534F;
 		}
 		.nav li:first-child{		
@@ -48,10 +52,154 @@
 		.text-color-red{
 			color: #D9534F;
 		}
+		/*内容主题*/
+		.container{
+			background: #F6F6F6;
+		}
+		/*搜索框*/
+		.search{
+			width: 100%;
+			margin: 15px auto; 
+		}
+		.search-body{
+			width: 450px;
+			margin: 15px auto;
+		}
+		.search-input input{
+			width: 390px;
+			height: 36px;
+			border-color: #D9534F;
+		}
+		.btn-search{
+			width: 64px;
+		}
+		.search-keyword{
+			margin: 5px auto;
+			color: #999;
+		}
+		/*专场导航*/
+		.nav-item{
+			width: 680px;
+			height: 36px;
+			margin: 0px auto;
+		}
+		.nav-item ul{
+			list-style:none; 
+		}
+		.nav-item li{
+			float: left;
+			font-size: 16px;
+			font-weight: bold;
+			
+			margin-left: 30px;
+		}
+		.nav-item a{
+			text-decoration: none;
+			color: #555555;
+		}
+		.nav-item a:hover{
+			color: #D9534F;
+		}
+		/*大的导航信息，包含导航，幻灯片等*/
+		.nav-body{
+			width: 1020px;
+			height: 485px;
+			margin: 0px auto;
+		}
+		.nav-side{
+			width: 200px;
+			height: 100%;
+			padding: 0px;
+			color: #fff;
+			float: left;
+			background-color: #6E6568;
+		}
+		.nav-side ul{
+			width: 100%;
+			padding:0px;
+			padding-top: 15px;
+			list-style: none;
+		}
+		.nav-side li{
+			padding: 7.5px;
+			padding-left: 15px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+		.nav-side li:hover{
+			background: #999395;
+		}
+		.nav-side-item:hover{
+			cursor: pointer;
+			color: #C81623;
+		}
+		/*导航内容*/
+		.nav-content{
+			width: 800px;
+			margin-left:15px;
+			float: left;
+		}
+		/*幻灯片*/
+		.slide{
+			width: 790px;
+			height: 340px;
+			position: relative;
+		}
+		.carousel_img{
+			position: absolute;
+			display: none;
+			top: 0px;
+			left: 0px;
+		}
+		.icon{
+			position: absolute;
+			width: 190px;
+			height: 25px;
+			border-radius: 14px;
+			background: rgba(204,204,204,0.5);
+			bottom: 15px;
+			left: 300px;
+			z-index: 99;
+		}
+		.icon i{
+			font-size: 16px;
+			line-height: 26px;
+			margin-left: 18px;
+			cursor: pointer;
+			color: #fff;
+		}
+		.prevNext{
+			width: 38px;
+			height: 68px;
+			position: absolute;
+			background-color: rgba(0,0,0,0.3);
+			font-size: 26px;
+			color: #fff;
+			line-height: 68px;
+			text-align: center;
+			top: 136px;
+			display: none;
+		}
+		.prev{		
+			left: 0px;			
+		}
+		.next{
+			right: 0px;
+		}
+		/*导航图片*/
+		.nav-show-img{
+			margin-top: 15px;
+			float: left;
+		}
+		.nav-show-img:nth-child(2){
+			margin-left: 12px;
+		}
+
+
 		/*浮窗*/
 		/*地理位置*/
 		.city{
-			width: 238px;
+			width: 250px;
 			padding:15px;
 			color: #999;
 			position: absolute;
@@ -60,24 +208,39 @@
 			display: none;
 		}
 		.city-item{
+			font-weight: bold;
 			padding: 5px;
 		}
 		.city-item:hover{
-			font-weight: bold;
+			
 			color: #D9534F;
 		}
 		/*我的商城*/
 		.my-shop-panel{
-			width: 238px;
+			width: 250px;
 			padding:15px;
 			color: #999;
 			position: absolute;
 			background-color: #fff;
 			box-shadow: 0px 5px 15px #ccc;
 			display: none;
+			z-index: 999;
 		}
 		.my-item{
+			font-weight: bold;
 			padding:15px;
+		}
+		.my-item:hover{
+			color:#D9534F; 
+		}
+		/*显示商品详细信息*/
+		.detail-item-panel{
+			width:815px;
+			height: 485px;
+			background-color: #fff;
+			position: absolute;
+			display: none;
+			z-index: 999;
 		}
 	</style>
 </head>
@@ -95,7 +258,75 @@
 		</ul>
 	</div>
 	<div class="container">
-		
+		<div class="search">
+			<div class="search-body">
+				<div class="input-group">
+			      <input type="text" class="form-control" placeholder="输入你想要的商品">
+			      <span class="input-group-btn">
+			        <button class="btn btn-danger btn-search" type="button"><i class="fa fa-search"></i></button>
+			      </span>
+			    </div>
+			    <div class="search-keyword">
+			    	<p>买2免1 领500神券 199减100 服装 ups电源 虎牌 母婴5折抢 取暖器 手机</p>
+			    </div>
+			</div>
+		</div>
+		<div class="nav-item">
+			<ul>
+				<li><a href="#">秒杀</a></li>
+				<li><a href="#">优惠券</a></li>
+				<li><a href="#">闪购</a></li>
+				<li><a href="#">拍卖</a></li>
+				<li><a href="#">服装城</a></li>
+				<li><a href="#">超市</a></li>
+				<li><a href="#">生鲜</a></li>
+				<li><a href="#">全球购</a></li>
+				<li><a href="#">金融</a></li>
+			</ul>
+		</div>
+		<div class="nav-body">
+			<div class="nav-side">
+				<ul>
+				    <li><span class="nav-side-item">家用电器</span></li>
+				    <li><span class="nav-side-item">手机</span> / <span class="nav-side-item">运营商</span> / <span class="nav-side-item">数码</span></li>
+				    <li><span class="nav-side-item">电脑</span> / <span class="nav-side-item">办公</span></li>
+				    <li><span class="nav-side-item">家居</span> / <span class="nav-side-item">家具</span> / <span class="nav-side-item">家装</span> / <span class="nav-side-item">厨具</span></li>
+				    <li><span class="nav-side-item">男装</span> / <span class="nav-side-item">女装</span> / <span class="nav-side-item">童装</span> / <span class="nav-side-item">内衣</span></li>
+				    <li><span class="nav-side-item">美妆个护</span> / <span class="nav-side-item">宠物</span></li>
+				    <li><span class="nav-side-item">女鞋</span> / <span class="nav-side-item">箱包</span> / <span class="nav-side-item">钟表</span> / <span class="nav-side-item">珠宝</span></li>
+				    <li><span class="nav-side-item">男鞋</span> / <span class="nav-side-item">运动</span> / <span class="nav-side-item">户外</span></li>
+				    <li><span class="nav-side-item">汽车</span> / <span class="nav-side-item">汽车用品</span></li>
+				    <li><span class="nav-side-item">母婴</span> / <span class="nav-side-item">玩具乐器</span></li>
+				    <li><span class="nav-side-item">食品</span> / <span class="nav-side-item">酒类</span> / <span class="nav-side-item">生鲜</span> / <span class="nav-side-item">特产</span></li>
+				    <li><span class="nav-side-item">礼品鲜花</span> / <span class="nav-side-item">农资绿植</span></li>
+				    <li><span class="nav-side-item">医药保健</span> / <span class="nav-side-item">计生情趣</span></li>
+				    <li><span class="nav-side-item">图书</span> / <span class="nav-side-item">音像</span> / <span class="nav-side-item">电子书</span></li>
+				</ul>
+			</div>
+			<div class="nav-content">
+				<!-- 幻灯片 -->
+				<div class="slide">
+					<img class="carousel_img" src="img/1.jpg" name="1">
+					<img class="carousel_img" src="img/2.jpg" name="2">
+					<img class="carousel_img" src="img/3.jpg" name="3">
+					<img class="carousel_img" src="img/4.jpg" name="4">
+					<img class="carousel_img" src="img/5.jpg" name="5">
+					<div class="icon">
+						<i name="1" class="fa fa-circle"></i>
+						<i name="2" class="fa fa-circle"></i>
+						<i name="3" class="fa fa-circle"></i>
+						<i name="4" class="fa fa-circle"></i>
+						<i name="5" class="fa fa-circle"></i>
+					</div>
+					<div class="prev prevNext" onclick="PrevNextClick(1)"> <span class="glyphicon glyphicon-menu-left"></span> </div>
+					<div class="next prevNext" onclick="PrevNextClick(2)"> <span class="glyphicon glyphicon-menu-right"></span> </div>
+				</div>
+				<div class="nav-show">
+					<div class="nav-show-img"><img src="img/nav_showimg1.jpg"></div>
+					<div class="nav-show-img"><img src="img/nav_showimg2.jpg"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- 页面上的各种浮窗 -->
 	<!-- 地理位置 -->
@@ -151,6 +382,10 @@
 			<span class="my-item">我的问答</span>
 		</p>
 	</div>
+	<!-- 显示详细商品分类菜单 -->
+	<div class="detail-item-panel">
+		<p>waitting for doing</p>
+	</div>
 </body>
 <script>
 	//当鼠标放在导航条上时
@@ -183,5 +418,99 @@
 			$('.my-shop').children('a').css("border-left", "1px solid #ccc");
 			$('.my-shop').removeClass("nav-pull-down-action");
 		});
+	//幻灯片
+	var nowKey = 1;
+	$('.carousel_img[name=1]').show();
+	$('.icon i[name=1]').css("color", "#f00");
+	objTime = setInterval(Carousel,2500);
+
+
+	// 幻灯片
+	function Carousel() {
+		var forKey = 1;
+		nowKey++;
+		//便利img标签
+		$('.carousel_img').each(function(){
+			//如果已显示
+			if (!$(this).is(":hidden") && (nowKey-1) == forKey) {
+				if (nowKey == 6) {
+					nowKey = 1;
+					$('.carousel_img[name=1]').fadeIn(800);
+					console.log(nowKey);
+				}else{
+					$(this).next('img').fadeIn(800);
+				}
+				$(this).fadeOut(800);
+			}
+			forKey++;
+		});
+		//下面红点跟着幻灯片动
+		if (nowKey == 1) {
+			$(".icon i[name=1]").css("color", "#f00");
+			$(".icon i[name=5]").css("color", "#fff");
+		}else{
+			$(".icon i[name="+nowKey+"]").css("color", "#f00");
+			$(".icon i[name="+(nowKey-1)+"]").css("color", "#fff");
+		}
+	}
+
+	//鼠标放在上面暂停
+	$('.slide').hover(
+		function(){
+			clearInterval(objTime);
+			$('.prevNext').show();
+		},
+		function(){
+			objTime = setInterval(Carousel,2500);
+			$('.prevNext').hide();
+		}
+	);
+
+	//点击小圆点
+	$('.icon i').hover(function(){
+			//先消失
+			tempKey = parseInt($(this).attr("name"));
+			$(".icon i[name="+nowKey+"]").css("color", "#fff");
+			//如果选中的和上一个不一样时
+			if (tempKey != nowKey)
+				$(".carousel_img[name="+nowKey+"]").fadeOut(800);
+			nowKey =tempKey; 
+			//再出现
+			$(this).css("color", "#f00");
+			$(".carousel_img[name="+nowKey+"]").fadeIn(800);
+			console.log(nowKey);
+		},function(){});
+
+	//点击上一张下一张
+	function PrevNextClick(flag){
+		if (flag == 1){
+			if (nowKey>1) {
+				$(".icon i[name="+nowKey+"]").css("color", "#fff");
+				$(".carousel_img[name="+nowKey+"]").fadeOut(800);
+				nowKey--;
+			}
+		}
+		else if (flag == 2){
+			if (nowKey<5) {
+				$(".icon i[name="+nowKey+"]").css("color", "#fff");
+				$(".carousel_img[name="+nowKey+"]").fadeOut(800);
+				nowKey++;
+			}
+		}
+		$(".icon i[name="+nowKey+"]").css("color", "#f00");
+		$(".carousel_img[name="+nowKey+"]").fadeIn(800);
+	}
+
+
+	//显示商品详细信息
+	$('.nav-side,.detail-item-panel').hover(
+		function(){
+			var slideOffset = $('.nav-side').offset();
+			$('.detail-item-panel').show();
+			$('.detail-item-panel').css("top",slideOffset.top + "px");
+			$('.detail-item-panel').css("left",(slideOffset.left + 200) + "px");
+		},function(){
+			$('.detail-item-panel').hide();
+		})
 </script>
 </html>
