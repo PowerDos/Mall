@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<script src="js/jquery.js"></script>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		.container{
+			width: 330px;
+			height: 430px;
+			margin: 0px auto;
+			margin-top: 50px;
+			color: #fff;
+			border-radius: 8px;
+			box-shadow: 5px 5px 6px #ccc;
+			background-color: #2196F3;
+		}
+		.info{
+			width: 100%;
+			height: 80px;
+			font-size: 28px;
+			text-align: center;
+			line-height: 80px;
+		}
+		label{
+			margin-left: 18px;
+		}
+		.form-group{
+			margin-top: 18px;
+		}
+		.form-input{
+			height: 33px;
+			width: 220px;
+			padding-left: 8px;
+			background-color: #F0FFFF;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.radio{
+			margin-top: 15px;
+		}
+		.radio span{
+			margin-left: 18px;
+		}
+		.radio input{
+			margin-left: 26px;
+		}
+		.btn{
+			margin-top: 30px;
+		}
+		.form-btn{
+			height: 38px;
+			width: 300px;
+			color:#fff;
+			border: 1px solid #F44336;
+			margin-left: 15px;
+			background-color: #F44336;
+			border-radius: 5px;
+			box-shadow: 2px 2px 3px #CD8131;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="info">
+			<span>用户注册</span>
+		</div>
+		<form action="#">
+			<div class="form-group">
+				<p>
+					<label for="">用户名：</label>
+					<input type="text" class="form-input" name="username">
+				</p>
+			</div>
+			<div class="form-group">
+				<label for="">密&nbsp;&nbsp;码：</label>
+				<input type="password" class="form-input" name="password">
+			</div>
+			<div class="form-group">
+				<label for="">邮&nbsp;&nbsp;箱：</label>
+				<input type="password" class="form-input" name="password">
+			</div>
+			<div class="radio">
+				<span>性&nbsp;&nbsp;别：</span>
+				<label><input type="radio" name="sex" value="male">&nbsp;&nbsp;男</label>
+				<label><input type="radio" name="sex" value="female">&nbsp;&nbsp;女</label>
+			</div>
+			<div class="form-group">
+				<label>城&nbsp;&nbsp;市：</label>
+				<select class="form-input">
+					<option>珠海</option>
+					<option>深圳</option>
+					<option>杭州</option>
+				</select>
+			</div>
+			<div class="btn">
+				<input type="submit" value="注册" class="form-btn">
+			</div>
+		</form>
+	</div>
+</body>
+<script>
+	$('form').submit(function () {
+		var username = $('input[name=username]').val();
+		var password = $('input[name=password]').val();
+		var Email = $('input[name=Email]').val();
+		var age = $('input[name=age]').val();
+		var sex = $("input[name=sex]:checked").val();
+		if (username.length == 0) {
+			alert("用户名不能为空");
+			return false;
+		}
+		if (password.length == 0) {
+			alert("密码为空");
+			return false;
+		}
+		if (password.length < 6) {
+			alert("密码小于6位");
+			return false;
+		}
+		if (Email.indexOf('@') == -1){
+			alert("邮箱格式有误");
+			return false;
+		}
+		if (!sex) {
+			alert("请选择性别");
+			return false;
+		}
+		if(!parseInt(age) || parseInt(age)<1 || parseInt(age)>99){
+			alert("请输入1-99的数字");
+			return false;
+		}
+	});
+</script>
+</html>
