@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/mall.css">
+    <style>
+        /* 店铺介绍 */
+
+        .shop-box {
+            width: 100%;
+            height: 120px;
+            background-color: #484848;
+        }
+
+        .shop-container {
+            width: 80%;
+            height: 100%;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .shop-title {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .shop-title-icon {
+            font-size: 46px;
+        }
+
+        .shop-title-content {
+            padding-top: 8px;
+            margin-left: 15px;
+        }
+
+        .shop-title-content p {
+            line-height: 20px;
+            font-size: 20px;
+        }
+
+        .shop-another-item {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .shop-another-item-detail {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .shop-another-item-img {
+            height: 80px;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .shop-another-item-img img {
+            width: 80px;
+        }
+
+        .shop-anoter-item-intro {
+            margin-left: 15px;
+        }
+
+        /* 店铺导航 */
+
+        .shop-nav-box {
+            height: 38px;
+            background-color: #333333;
+        }
+
+        .shop-nav-container {
+            width: 80%;
+            height: 100%;
+            margin: 0px auto;
+        }
+
+        .shop-nav-container ul {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .shop-nav-container li {
+            float: left;
+            margin-right: 30px;
+            line-height: 35px;
+        }
+
+        .shop-nav-container a {
+            text-decoration: none;
+            color: rgb(233, 224, 224);
+            font-weight: bold;
+        }
+
+        /* 网站路径 */
+
+        .shop-item-path {
+            height: 38px;
+            background-color: rgb(236, 235, 235);
+            line-height: 38px;
+            color: #2c2c2c;
+        }
+
+        /******************商品图片及购买详情开始******************/
+
+        .item-detail-show {
+            width: 80%;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .item-detail-big-img{
+            width: 350px;
+            height: 350px;
+        }
+        .item-detail-big-img img{
+            width: 100%;
+        }
+        /******************商品图片及购买详情结束******************/
+    </style>
+</head>
+
+<body>
+    <!-- 顶部导航条 -->
+    <div class="nav">
+        <ul>
+            <li class="nav-pull-down location">
+                <img src="img/icon_location.png"> 送至珠海</li>
+            <li>
+                <a href="#">手机商城</a>
+            </li>
+            <li>
+                <a href="#">网站导航</a>
+            </li>
+            <li>
+                <a href="#">客户服务</a>
+                </span>
+            </li>
+            <li>
+                <a href="#">企业采购</a>
+            </li>
+            <li>
+                <a href="#">商城会员</a>
+            </li>
+            <li class="nav-pull-down my-shop">
+                <a href="#">我的商城</a>
+                <span class="glyphicon glyphicon-menu-down"></span>
+            </li>
+            <li class="login-signup">你好，请
+                <a href="login.html">登录 </a>
+                <span class="text-color-red">
+                    <a href="signup.html">免费注册</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <!-- 搜索框 -->
+    <div class="search">
+        <div class="search-body">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="输入你想要的商品">
+                <span class="input-group-btn">
+                    <button class="btn btn-danger btn-search" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+            <div class="search-keyword">
+                <p>手机壳6plus 手机壳6 手机壳7 手机壳6s plus 手机壳7 手机壳华为 手机</p>
+            </div>
+        </div>
+    </div>
+    <div class="shop-box">
+        <div class="shop-container">
+            <div class="shop-title">
+                <div class="shop-title-icon">
+                    <i class="fa fa-fire"></i>
+                </div>
+                <div class="shop-title-content">
+                    <p>Gavin Shop</p>
+                    <p>The Best Thing For You</p>
+                </div>
+            </div>
+            <div class="shop-another-item">
+                <div class="shop-another-item-detail">
+                    <div class="shop-another-item-img">
+                        <img src="./img/item-show-1.jpg" alt="">
+                    </div>
+                    <div class="shop-anoter-item-intro">
+                        <p>全身磨砂</p>
+                        <p>防指纹</p>
+                    </div>
+                </div>
+                <div class="shop-another-item-detail">
+                    <div class="shop-another-item-img">
+                        <img src="./img/item-show-2.jpg" alt="">
+                    </div>
+                    <div class="shop-anoter-item-intro">
+                        <p>环保PP材质</p>
+                        <p>不发黄</p>
+                    </div>
+                </div>
+                <div class="shop-another-item-detail">
+                    <div class="shop-another-item-img">
+                        <img src="./img/item-show-3.jpg" alt="">
+                    </div>
+                    <div class="shop-anoter-item-intro">
+                        <p>0.4mm纤细</p>
+                        <p>纤薄手感</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shop-nav-box">
+        <div class="shop-nav-container">
+            <ul>
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">iPhoneX</a>
+                </li>
+                <li>
+                    <a href="#">iPhone8</a>
+                </li>
+                <li>
+                    <a href="#">OnePlus</a>
+                </li>
+                <li>
+                    <a href="#">坚果Pro</a>
+                </li>
+                <li>
+                    <a href="#">Note8</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="shop-item-path">
+        <div class="shop-nav-container">
+            <p>手机 &nbsp > &nbsp 手机配件 &nbsp > &nbsp 手机保护套 &nbsp > &nbsp iPhone8磨砂壳</p>
+        </div>
+    </div>
+    <div class="item-detail-show">
+        <div class="item-detail-left">
+            <div class="item-detail-big-img">
+                <img src="./img/item-detail-1.jpg" alt="">
+            </div>
+            <div class="item-detail-img-row">
+                <div class="item-detail-img-small">
+                    <img src="./img/item-detail-1.jpg" alt="">
+                </div>
+                <div class="item-detail-img-small">
+                    <img src="./img/item-detail-1.jpg" alt="">
+                </div>
+                <div class="item-detail-img-small">
+                    <img src="./img/item-detail-1.jpg" alt="">
+                </div>
+                <div class="item-detail-img-small">
+                    <img src="./img/item-detail-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="item-detail-right">
+
+        </div>
+    </div>
+</body>
+
+</html>
