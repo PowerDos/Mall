@@ -12,6 +12,9 @@
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/mall.css">
     <style>
+        body{
+            background-color: #fff;
+        }
         /* 店铺介绍 */
 
         .shop-box {
@@ -117,22 +120,264 @@
         }
 
         /******************商品图片及购买详情开始******************/
-
         .item-detail-show {
             width: 80%;
-            margin: 0px auto;
+            margin: 15px auto;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            background-color: #fff;
+        }
+        .item-detail-left{
+            width: 350px;
+            margin-right: 30px;
         }
         .item-detail-big-img{
             width: 350px;
             height: 350px;
+            box-shadow: 0px 0px 8px #ccc;
+            cursor: pointer;
         }
         .item-detail-big-img img{
             width: 100%;
         }
+        .item-detail-img-row {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .item-detail-img-small{
+            width: 68px;
+            box-shadow: 0px 0px 8px #ccc;
+            cursor: pointer;
+        }
+        .item-detail-img-small img{
+            width: 100%;
+        }
+        /*商品选购详情*/
+        .item-detail-right{
+            display: flex;
+            flex-direction: column;
+        }
+        .item-detail-title p{
+            color: #666;
+            font-size: 20px;
+        }
+        .item-detail-express{
+            font-size: 14px;
+            padding: 2px 3px;
+            border-radius: 3px;
+            background-color: #E4393C;
+            color: #fff;
+        }
+        /*商品标签*/
+        .item-detail-tag{
+            font-size: 12px;
+            color: #e4393c;
+        }
+        /*价格详情等*/
+        .item-detail-price-row{
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #F3F3F3;
+        }
+        .item-price-left{
+            display: flex;
+            flex-direction: column; 
+        }
+        .item-price-title{
+            color: #999999;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        .item-price{
+            color: #E4393C;
+            font-size: 23px;
+            cursor: pointer;
+        }
+        .item-price-full-cut{
+            padding: 3px;
+            color: #E4393C;
+            font-size: 12px;
+            background-color: #FFDEDF;
+            border: 1px dotted #E4393C;
+            cursor: pointer;
+        }
+        .item-remarks-sum{
+            padding-left: 8px;
+            border-left: 1px solid #ccc;
+        }         
+        .item-remarks-sum p{
+            color: #999999;
+            font-size: 12px;
+            line-height: 10px;
+            text-align: center;
+        }
+        .item-remarks-num{
+            color: #005EB7;
+        }
+        .item-select{
+            display: flex;
+            flex-direction: row;
+            margin-top: 15px;
+        }
+        .item-select-title{
+            color: #999999;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+        .item-select-column{
+            display: flex;
+            flex-direction: column;
+        }
+        .item-select-row{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 8px;
+        }
+        .item-select-box{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .item-select-img{
+            width: 36px;
+        }
+        .item-select-box{
+            padding: 5px;
+            margin-right: 8px;
+            background-color: #F7F7F7;
+            border: 0.5px solid #ccc;
+            cursor: pointer;
+        }
+        .item-select-box:hover{
+            border: 0.5px solid #e3393c;
+        }
+        .item-select-img img{
+            width: 100%;
+        }
+        .item-select-intro p{
+            margin: 0px;
+            padding: 5px;
+        }
+        .item-select-class{
+            padding: 5px;
+            margin-right: 8px;
+            background-color: #F7F7F7;
+            border: 0.5px solid #ccc;
+            cursor: pointer;
+        }
+        .item-select-class:hover{
+            border: 0.5px solid #e3393c;
+        }
+        .add-buy-car-box{
+            width: 100%;
+            margin-top: 15px;
+            border-top: 1px solid #ccc; 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-add-buy-car{
+            margin-top: 8px;
+        }
         /******************商品图片及购买详情结束******************/
+        /***************商品详情介绍和推荐侧边栏开始***************/
+        .item-intro-show{
+            width: 80%;
+            margin: 15px auto;
+            display: flex;
+            flex-direction: row;
+            background-color: #fff;
+        }
+        .item-intro-recommend{
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+        .item-intro-recommend-column{
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 0px 5px #999;
+        }
+        .item-recommend-title{
+            width: 100%;
+            height: 38px;
+            font-size: 16px;
+            line-height: 38px;
+            color: #fff;
+            background-color: #E4393C;
+            box-shadow: 0px 0px 5px #E4393C;
+            text-align: center;
+        }
+        .item-recommend-column{
+            margin-top: 15px;
+        }
+        .item-recommend-intro{
+            padding: 5px 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            cursor: pointer;
+        }
+        .item-recommend-img{
+            width: 80%;
+            margin: 0px auto;
+            cursor: pointer;
+        }
+        .item-recommend-img img{
+            width: 100%;
+        }
+        .item-recommend-top-num{
+            color: #fff;
+            margin: 0px 2px;
+            padding: 1px 5px;
+            border-radius: 12px;
+            background-color: #E4393C;
+        }
+        .item-recommend-price{
+            color: #E4393C;
+            font-weight: bolder;
+        }
+        .item-intro-detail{
+            margin-left: 30px;
+            width: calc(80vw - 300px);
+        }
+        .item-intro-nav{
+            width: 100%;
+            height: 38px;
+            background-color: #F7F7F7;
+            border-bottom: 1px solid #E4393C;
+        }
+        .item-intro-nav ul{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .item-intro-nav li{
+            float: left;
+            height: 100%;
+            width: 120px;
+            line-height: 38px;
+            text-align: center;
+            color: #E4393C;
+        }
+        .item-intro-nav li:first-child{
+            background-color: #E4393C;
+            color: #fff;
+        }
+        .item-intro-img{
+            width: 100%;
+        }
+        .item-intro-img img{
+            width: 100%;
+        }
+        /***************商品详情介绍和推荐侧边栏结束***************/
     </style>
 </head>
 
@@ -186,6 +431,7 @@
             </div>
         </div>
     </div>
+    <!-- 导航条 -->
     <div class="shop-box">
         <div class="shop-container">
             <div class="shop-title">
@@ -257,6 +503,7 @@
             <p>手机 &nbsp > &nbsp 手机配件 &nbsp > &nbsp 手机保护套 &nbsp > &nbsp iPhone8磨砂壳</p>
         </div>
     </div>
+    <!-- 商品信息展示 -->
     <div class="item-detail-show">
         <div class="item-detail-left">
             <div class="item-detail-big-img">
@@ -267,20 +514,366 @@
                     <img src="./img/item-detail-1.jpg" alt="">
                 </div>
                 <div class="item-detail-img-small">
-                    <img src="./img/item-detail-1.jpg" alt="">
+                    <img src="./img/item-detail-2.jpg" alt="">
                 </div>
                 <div class="item-detail-img-small">
-                    <img src="./img/item-detail-1.jpg" alt="">
+                    <img src="./img/item-detail-3.jpg" alt="">
                 </div>
                 <div class="item-detail-img-small">
-                    <img src="./img/item-detail-1.jpg" alt="">
+                    <img src="./img/item-detail-4.jpg" alt="">
                 </div>
             </div>
         </div>
         <div class="item-detail-right">
-
+            <div class="item-detail-title">
+                <p><span class="item-detail-express">校园配送</span> 苹果8/7手机壳iPhone7 Plus保护壳全包防摔磨砂硬外壳</p>
+            </div>
+            <div class="item-detail-tag">
+                <p><span>【满69-20元】</span> <span>【关注产品★送钢化膜】</span> <span>【京配次日达】</span></p>
+            </div>
+            <div class="item-detail-price-row">
+                <div class="item-price-left">
+                    <div class="item-price-row">
+                        <p><span class="item-price-title">京 东 价</span> <span class="item-price">￥28.00</span></p>
+                    </div>
+                    <div class="item-price-row">
+                        <p>
+                            <span class="item-price-title">优 惠 价</span> 
+                            <span class="item-price-full-cut">满148减10</span>
+                            <span class="item-price-full-cut">满218减20</span>
+                            <span class="item-price-full-cut">满288减30</span>
+                        </p>
+                    </div>
+                    <div class="item-price-row">
+                        <p>
+                            <span class="item-price-title">促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
+                            <span class="item-price-full-cut">跨店满减</span>
+                            <span class="item-price-full-cut">多买优惠</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="item-price-right">
+                    <div class="item-remarks-sum">
+                        <p>累计评价</p>
+                        <p><span class="item-remarks-num">7.5万+</span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 选择颜色 -->
+            <div class="item-select">
+                <div class="item-select-title">
+                    <p>选择颜色</p>
+                </div>
+                <div class="item-select-column">
+                    <div class="item-select-row">
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/1.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>4.7英寸-深邃蓝</p>
+                            </div>
+                        </div>
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/2.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>4.7英寸-星空黑</p>
+                            </div>
+                        </div>
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/3.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>5.5英寸-香槟金</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-select-row">
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/4.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>5.5英寸-玫瑰金</p>
+                            </div>
+                        </div>
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/5.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>5.5英寸-深邃蓝</p>
+                            </div>
+                        </div>
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/6.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>5.5英寸-星空黑</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-select-row">
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/7.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>4.7英寸-香槟金</p>
+                            </div>
+                        </div>
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/8.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>4.7英寸-玫瑰金</p>
+                            </div>
+                        </div>
+                        <div class="item-select-box">
+                            <div class="item-select-img">
+                                <img src="./img/select/9.jpg" alt="">
+                            </div>
+                            <div class="item-select-intro">
+                                <p>4.7英寸-中国红</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 选择套餐 -->
+            <div class="item-select">
+                <div class="item-select-title">
+                    <p>优惠套装</p>
+                </div>
+                <div class="item-select-row">
+                    <div class="item-select-class">
+                        <span>优惠套餐一</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>优惠套餐二</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>优惠套餐三</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>优惠套餐四</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>优惠套餐五</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 白条分期 -->
+            <div class="item-select">
+                <div class="item-select-title">
+                    <p>白条分期</p>
+                </div>
+                <div class="item-select-row">
+                    <div class="item-select-class">
+                        <span>不分期</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>￥9.47 x 3期</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>￥4.81 x 6期</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>￥2.47 x 12期</span>
+                    </div>
+                    <div class="item-select-class">
+                        <span>￥1.31 x 24期</span>
+                    </div>
+                </div>
+            </div>
+            <div class="add-buy-car-box">
+                <button class="btn-add-buy-car btn btn-danger">
+                    加入购物车
+                </button>
+            </div>
         </div>
     </div>
+    <!-- 商品详细展示 -->
+    <div class="item-intro-show">
+        <div class="item-intro-recommend">
+            <div class="item-recommend-title">
+                <p>店铺热销</p>
+            </div>
+            <div class="item-intro-recommend-column">
+                <div class="item-recommend-column">
+                    <div class="item-recommend-img">
+                        <img src="./img/sidebar/1.jpg" alt="">
+                    </div>
+                    <div class="item-recommend-intro">
+                        <span><span class="item-recommend-top-num">1</span> 热销165077件</span>
+                        <span class="item-recommend-price">￥28.00</span>
+                    </div>
+                </div>
+                <div class="item-recommend-column">
+                    <div class="item-recommend-img">
+                        <img src="./img/sidebar/2.jpg" alt="">
+                    </div>
+                    <div class="item-recommend-intro">
+                        <span><span class="item-recommend-top-num">2</span> 热销112892件</span>
+                        <span class="item-recommend-price">￥36.00</span>
+                    </div>
+                </div>
+                <div class="item-recommend-column">
+                    <div class="item-recommend-img">
+                        <img src="./img/sidebar/3.jpg" alt="">
+                    </div>
+                    <div class="item-recommend-intro">
+                        <span><span class="item-recommend-top-num">3</span> 热销84980件</span>
+                        <span class="item-recommend-price">￥28.00</span>
+                    </div>
+                </div>
+                <div class="item-recommend-column">
+                    <div class="item-recommend-img">
+                        <img src="./img/sidebar/4.jpg" alt="">
+                    </div>
+                    <div class="item-recommend-intro">
+                        <span><span class="item-recommend-top-num">4</span> 热销36051件</span>
+                        <span class="item-recommend-price">￥48.00</span>
+                    </div>
+                </div>
+                <div class="item-recommend-column">
+                    <div class="item-recommend-img">
+                        <img src="./img/sidebar/5.jpg" alt="">
+                    </div>
+                    <div class="item-recommend-intro">
+                        <span><span class="item-recommend-top-num">5</span> 热销20858件</span>
+                        <span class="item-recommend-price">￥25.00</span>
+                    </div>
+                </div>
+                <div class="item-recommend-column">
+                    <div class="item-recommend-img">
+                        <img src="./img/sidebar/6.jpg" alt="">
+                    </div>
+                    <div class="item-recommend-intro">
+                        <span><span class="item-recommend-top-num">6</span> 热销15672件</span>
+                        <span class="item-recommend-price">￥62.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item-intro-detail">
+            <div class="item-intro-nav">
+                <ul>
+                    <li>商品介绍</li>
+                    <li>规格包装</li>
+                    <li>售后保障</li>
+                    <li>商品评价(7.5万+)</li>
+                </ul>
+            </div>
+            <div class="item-intro-img">
+                <img src="./img/detail/1.jpg" alt="">
+                <img src="./img/detail/2.jpg" alt="">
+                <img src="./img/detail/3.jpg" alt="">
+                <img src="./img/detail/4.jpg" alt="">
+                <img src="./img/detail/5.jpg" alt="">
+                <img src="./img/detail/6.jpg" alt="">
+                <img src="./img/detail/7.jpg" alt="">
+                <img src="./img/detail/8.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="clearfix"></div>
+        <div class="icon-row">
+            <div class="footer-icon">
+                <h5 class="footer-icon-child"></h5>
+                <span class="footer-icon-text">品类齐全，轻松购物</span>
+            </div>
+            <div class="footer-icon">
+                <h5 class="footer-icon-child footer-icon-child-2"></h5>
+                <span class="footer-icon-text">多仓直发，极速配送</span>
+            </div>
+            <div class="footer-icon">
+                <h5 class="footer-icon-child footer-icon-child-3"></h5>
+                <span class="footer-icon-text">正品行货，精致服务</span>
+            </div>
+            <div class="footer-icon">
+                <h5 class="footer-icon-child footer-icon-child-4"></h5>
+                <span class="footer-icon-text">天天低价，畅选无忧</span>
+            </div>
+        </div>
+        <div class="service-intro">
+            <div class="servece-type">
+                <div class="servece-type-info">
+                    <ul>
+                        <li>购物指南</li>
+                        <li>购物流程</li>
+                        <li>会员介绍</li>
+                        <li>生活旅行</li>
+                        <li>常见问题</li>
+                        <li>大家电</li>
+                        <li>联系客服</li>
+                    </ul>
+                </div>
+                <div class="servece-type-info">
+                    <ul>
+                        <li>配送方式</li>
+                        <li>上门自提</li>
+                        <li>211限时达</li>
+                        <li>配送服务查询</li>
+                        <li>配送费收取标准</li>
+                        <li>海外配送</li>
+                    </ul>
+                </div>
+                <div class="servece-type-info">
+                    <ul>
+                        <li>支付方式</li>
+                        <li>货到付款</li>
+                        <li>在线支付</li>
+                        <li>分期付款</li>
+                        <li>邮局汇款</li>
+                        <li>公司转账</li>
+                    </ul>
+                </div>
+                <div class="servece-type-info">
+                    <ul>
+                        <li>售后服务</li>
+                        <li>售后政策</li>
+                        <li>价格保护</li>
+                        <li>退款说明</li>
+                        <li>返修/退换货</li>
+                        <li>取消订单</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="friend-link">
+                <div class="friend-link-item">
+                    <ul>
+                        <li><span class="link-item">关于我们</span></li>
+                        <li><span class="link-item">联系我们</span></li>
+                        <li><span class="link-item">联系客服</span></li>
+                        <li><span class="link-item">合作招商</span></li>
+                        <li><span class="link-item">商家帮助</span></li>
+                        <li><span class="link-item">营销中心</span></li>
+                        <li><span class="link-item">销售联盟</span></li>
+                        <li><span class="link-item">校园社区</span></li>
+                        <li><span class="link-item">风险监测</span></li>
+                        <li><span class="link-item link-last-item">隐私政策</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="copyright">
+                <p>Copyright © 2017 BY Gavin 林智杰</p>
+            </div>
+        </div>
+    </footer>
 </body>
-
+<script type="text/javascript">
+    $('.item-detail-img-small img').hover(function () {
+        $('.item-detail-big-img img').attr('src', $(this).attr('src'));
+    });
+</script>
 </html>

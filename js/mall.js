@@ -29,6 +29,7 @@ $('.my-shop,.my-shop-panel').hover(
 		$('.my-shop').children('a').css("border-left", "1px solid #ccc");
 		$('.my-shop').removeClass("nav-pull-down-action");
 	});
+
 //幻灯片
 var nowKey = 1;
 $('.carousel_img[name=1]').show();
