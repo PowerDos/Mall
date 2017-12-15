@@ -4,7 +4,7 @@
 ![首页动态图](https://raw.githubusercontent.com/PowerDos/Mall/master/img/index.gif)
 
 ## 整体动态图
-![](https://i.imgur.com/xSdlAmw.gif)
+![整体动态图](https://raw.githubusercontent.com/PowerDos/Mall/master/img/all.gif)
 
 ## 首页图片
 ![首页图片1](http://i.imgur.com/3sasNkh.png)
