@@ -199,3 +199,7 @@ $('.item-four-detail').hover(
 			'margin-left':'0px'
 		},380);
 	});
+
+$('.item-row').click(function(){
+	window.location = 'item_detail.html';
+})
