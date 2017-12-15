@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>购物车</title>
+    <title>在线支付</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/jquery.js"></script>
@@ -86,167 +86,16 @@
 			</ul>
 		</div>
 	</div>
-	<!-- 添加成功提示 -->
-	<div class="add-info-box-container">
-		<div class="add-info-box">
-			<div class="add-info-detail">
-				<div class="add-info-title">
-					<p> <i class="fa fa-check-circle"></i> 商品已成功加入购物车！</p>
-				</div>
-				<div class="add-info-box-row">
-					<div class="add-info-img">
-						<img src="./img/select/1.jpg" alt="">
-					</div>
-					<div class="add-info-intro">
-						<p>苹果8/7手机壳iPhone7Plus保护壳全包防摔磨砂硬外壳手机套女薄男透明 4.7英寸-深邃蓝...</p>
-						<p class="add-info-intro-detail">颜色：4.7英寸-深邃蓝/ 数量：1</p>
-					</div>
-				</div>
-			</div>
-			<div class="car-btn-group">
-				<div></div>
-				<div class="car-btn-row">
-					<a href="item_detail.html"><button class="btn-car btn-car-to-detail">查看商品详情</button></a>
-					<a href="pay.html"><button class="btn-car btn-car-to-pay">去购物车结算 > </button></a>
-				</div>
-			</div>
+	<!-- 支付提示 -->
+	<div class="pay-box">
+		<div class="pay-title">
+			<p>请扫码支付</p>
 		</div>
-	</div>
-	<div class="other-user-buy-box">
-		<div class="other-user-buy-title">
-			<p>购买了该商品的用户还购买了</p>
+		<div class="pay-qr">
+			<img src="./img/qr.png" alt="">
 		</div>
-		<div class="other-user-buy-row">
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/1.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>iPhone7/6s/8钢化膜苹果7Plus全屏全覆盖3D抗蓝</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥29.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/2.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>苹果数据线 苹果iPhoneX/6s/7plus/8充电线</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥36.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/3.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>苹果8/7/6/6s钢化膜 iphone8/7/6s/6钢化玻璃</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥19.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<img src="./img/other_buy/4.jpg" alt="">
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>iPhone6s/7钢化膜苹果8 Plus手机膜抗蓝光非全屏</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥28.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="other-user-buy-row">
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/5.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>苹果6s手机壳iPhone6s Plus保护壳防摔全</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥28.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/6.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>iPhone7/8手机壳手机套防摔磨砂保护壳星空黑☆全包保护</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥30.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/7.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>数据线 适用于苹果iPhone 6s/6plus/7plus/8/X </p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥18.00</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
-			<div class="other-user-buy-item-box">
-				<div class="other-user-buy-item-img">
-					<a href="item_detail.html"><img src="./img/other_buy/8.jpg" alt=""></a>
-				</div>
-				<div class="other-buy-detail-box">
-					<div class="other-buy-title">
-						<a href="item_detail.html"><p>iPhone8/7/6S/6钢化膜 苹果8/7/6s/6玻璃膜 手机高</p></a>
-					</div>
-					<div class="other-buy-price">
-						<p>￥15.90</p>
-					</div>
-					<div class="other-buy-btn-box">
-						<a href="#"><button class="other-buy-btn"><i class="fa fa-shopping-cart"></i> 加入购物车</button></a>
-					</div>
-				</div>
-			</div>
+		<div class="pay-btn">
+			<a href="success.html" class="btn btn-danger btn-lg">支付成功</a>
 		</div>
 	</div>
 	<!-- 底部 -->

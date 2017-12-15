@@ -1400,3 +1400,41 @@
     	border: 1px solid #c91623;
     }
 /****************************加入购物车页面结束*****************************/
+
+
+/****************************支付页面开始*****************************/
+        .pay-box{
+        	width: 300px;
+        	margin:15px auto;
+        	display: flex;
+        	flex-direction: column;
+        	justify-content: center;
+        	align-content: center;
+        }
+        .pay-title{
+        	font-size: 20px;
+        	color: #2c2c2c;
+        	text-align: center;
+        }
+        .pay-qr{
+        	width: 100%;
+        }
+        .pay-qr img{
+        	width: 100%;
+        }
+        .pay-btn{
+        	margin: 15px 0px;
+        	text-align: center;
+        }
+
+/****************************支付页面结束*****************************/
+
+
+/****************************支付成功页面开始*****************************/
+		.pay-success-info{
+            margin: 30px 0px;
+            font-size: 30px;
+            color: #2c2c2c;
+            text-align: center;
+        }
+/****************************支付成功页面结束*****************************/
