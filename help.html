@@ -14,68 +14,6 @@
         body{
             background-color: #fff;
         }
-        .help-box{
-            width: 90%;
-            margin: 0px auto;
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-        .help-worker-row{
-            margin: 20px 0px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-content: center;
-        }
-        .help-worker-box{
-            width: 230px;
-            height: 120px;
-            display: flex;
-            flex-direction: row;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px #ccc;
-            cursor: pointer;
-        }
-        .help-worker-head{
-            margin-left: 20px;
-            margin-right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-            font-size: 56px;
-            text-align: center;
-        }
-        .head-qq{
-            color: #4CAFE9;
-        }
-        .head-wechat{
-            color: #00B700;
-        }
-        .head-facebook{
-            color: #39569D;
-        }
-        .head-weibo{
-            color: #D52B2A;
-        }
-        .help-worker-detail{
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-        }
-        .help-worker-detail p{
-            margin-bottom: 5px;
-        }
-        .help-worker-title{
-            color: #999;
-            font-size: 25px;
-        }
-        .help-worker-link{
-            color: #2c2c2c;
-        }
     </style>
 </head>
 <body>
@@ -91,8 +29,7 @@
                 <a href="#">网站导航</a>
             </li>
             <li>
-                <a href="#">客户服务</a>
-                </span>
+                <a href="help.html">客户服务</a>
             </li>
             <li>
                 <a href="#">企业采购</a>
@@ -402,4 +339,9 @@
         </div>
     </footer>
 </body>
+<script>
+    $('.help-worker-box').click(function () {
+        window.location = 'feedback.html';
+    })
+</script>
 </html>
